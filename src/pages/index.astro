@@ -65,6 +65,8 @@ const contact = [
   {
     title: "Curriculum Vitae",
     label: "Download",
+    href: "/Valentin_Cassarino_CV.pdf",
+    filename: "Valentin_Cassarino_CV.pdf",
   },
 ];
 
@@ -256,12 +258,12 @@ const posts = [
           <h2 class="text-lg font-serif">Contact</h2>
           <div class="space-y-3">
             {
-              contact.map(({ title, label, href }) => {
+              contact.map(({ title, label, href, filename }) => {
                 return (
                   <a
                     href={href}
                     class="flex items-center group text-sm gap-2 *:flex-shrink-0"
-                    download={title === "Curriculum Vitae"}
+                    download={filename ? filename : undefined}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
