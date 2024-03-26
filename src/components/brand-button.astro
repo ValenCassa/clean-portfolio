@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {}
+const props = Astro.props;
+---
+
+<a
+  class="bg-[#1679fa] items-center inline-flex relative text-sm px-2.5 h-8 rounded-lg text-white shadow-[0px_2px_3px_rgba(7,_19,_42,_0.19),0px_0px_0px_1px_#0b6ff8,_inset_0px_1px_0px_rgba(255,_255,_255,_0.25)] after:absolute after:inset-0 after:bg-gradient-to-b after:from-white/[17%] after:to-transparent after:transition-colors after:content-[''] hover:after:from-white/25"
+  {...props}
+>
+  <slot name="label" />
+</a>
