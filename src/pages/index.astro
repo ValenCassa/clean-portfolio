@@ -78,6 +78,19 @@ const posts = [
     isNew: true,
   },
 ];
+
+const projects = [
+  {
+    name: "Palta",
+    description: "A chat interface featuring the latest LLM models.",
+    link: "https://app.palta.chat",
+  },
+  {
+    name: "Roots",
+    description: "A platform to help people find their dream home.",
+    link: "https://roots.withalba.com",
+  },
+];
 ---
 
 <html lang="en">
@@ -92,10 +105,10 @@ const posts = [
         <div class="flex items-center gap-3">
           <div class="flex gap-2">
             <a
-              href="#about"
+              href="#projects"
               class="text-zinc-500 text-sm underline hover:text-zinc-950"
             >
-              about
+              projects
             </a>
             <a
               href="#experience"
@@ -118,29 +131,6 @@ const posts = [
 
       <section class="space-y-6 mt-16">
         <div class="space-y-4">
-          <a
-            href="https://roots.withalba.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="h-9 bg-zinc-50 border border-zinc-100 rounded-lg px-2 text-sm text-zinc-500 inline-flex items-center gap-4 hover:bg-zinc-100 cursor-pointer"
-          >
-            Just launched Roots, visit the site
-            <svg
-              class="size-4"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              ></path>
-            </svg>
-          </a>
           <h1 class="font-serif text-2xl leading-tight text-balance">
             Valentin Cassarino, Design Engineer
           </h1>
@@ -191,6 +181,27 @@ const posts = [
             working on a project, I'm all in, aiming to make things as great as
             they can be for the people using them.
           </p>
+        </section>
+
+        <section class="space-y-4" id="projects">
+          <h2 class="text-lg font-serif">Projects</h2>
+          <div class="flex max-[500px]:flex-col gap-4 text-sm">
+            {
+              projects.map(({ name, description, link }) => {
+                return (
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="space-y-1 relative before:absolute before:rounded-md before:-z-10 before:inset-0 min-[500px]:before:first-of-type:-translate-x-[calc(50%+8px)] min-[500px]:before:first-of-type:w-[calc(100%+4px)] before:w-[calc(100%+20px)] before:h-[calc(100%+20px)] before:top-1/2 before:left-1/2 before:-translate-y-1/2 before:-translate-x-1/2 hover:before:bg-zinc-100 before:transition-colors"
+                  >
+                    <p class="underline">{name}</p>
+                    <p class="text-zinc-500">{description}</p>
+                  </a>
+                );
+              })
+            }
+          </div>
         </section>
 
         <section class="space-y-4" id="experience">
