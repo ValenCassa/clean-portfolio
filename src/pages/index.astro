@@ -70,15 +70,6 @@ const contact = [
   },
 ];
 
-const posts = [
-  {
-    title: "Write it down",
-    slug: "write-it-down",
-    date: "03/26/2024",
-    isNew: true,
-  },
-];
-
 const projects = [
   {
     name: "Palta",
@@ -236,31 +227,6 @@ const projects = [
                   );
                 }
               )
-            }
-          </div>
-        </section>
-
-        <section class="space-y-4" id="posts">
-          <h2 class="text-lg font-serif">Thougths</h2>
-          <div class="space-y-3">
-            {
-              posts.map(({ title, slug, date, isNew }) => {
-                const href = `/thoughts/${slug}`;
-                return (
-                  <a class="flex items-center gap-2 group" href={href}>
-                    {isNew ? (
-                      <span class="h-5 inline-grid place-content-center rounded-full px-1.5 bg-[#1679FA] font-medium text-[12px] text-white">
-                        New
-                      </span>
-                    ) : null}
-                    <p class="underline text-sm">{title}</p>
-                    <hr class="flex-1" />
-                    <p class="text-zinc-500 text-sm group-hover:text-zinc-950">
-                      {date}
-                    </p>
-                  </a>
-                );
-              })
             }
           </div>
         </section>
